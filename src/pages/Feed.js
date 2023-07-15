@@ -11,7 +11,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 const Feed = () => {
   const [query, setQuery] = useState("");
   const [post, setPost] = useState();
@@ -32,22 +33,33 @@ const Feed = () => {
   }, [query]);
 console.log(post);
   return (
-    <Grid container spacing={2} sx={{ margin: "2%" }}>
+    <>
+    <div style={{background:"#0F0E13"}}>
+      <div className="gradient-bg-welcome">
+        <Navbar />
+      </div>
+    <div className="gradient-bg-services">
+    <div className="min-h-screen">
+    <Grid container spacing={2} sx={{ margin: "2%" }} style={{ fontStyle: 'italic' }}>
       <Grid item xs={12} sx={12} md={12} lg={12}>
-      <Button sx={{ margin: "1% 2%" }} variant="outlined">
-            <Link to="/">Home</Link>
-          </Button>
+      <Button sx={{ margin: "1% 2%" }} style={{ color: 'white',borderColor:'white',fontFamily:'Open Sans' }}>
+            Enter skills / designation / companies
+        </Button>
         <Box>
           <TextField
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
+                <InputAdornment position="start"style={{ color:'white',borderColor: 'white' }} >
+                  <SearchIcon style={{ color: 'white' }}/>
                 </InputAdornment>
               ),
+              style:{
+                color:'white',
+                fontFamily:'Open Sans'
+              }
             }}
             placeholder="Search..."
-            sx={{ width: "75%", padding: "2% auto" }}
+            sx={{ width: "75%", padding: "2% auto",borderColor:'white' }}
             fullWidth
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -76,7 +88,7 @@ console.log(post);
                 <Typography gutterBottom  variant="body">Skills : </Typography>
                 {p.techs.map((s, i) => {
                   return (
-                    <Typography variant="body" gutterBottom key={i}>
+                    <Typography variant="body" gutterBottom key={i} >
                       {s} .
                       {` `}
                     </Typography>
@@ -88,6 +100,11 @@ console.log(post);
           );
         })}
     </Grid>
+    </div>
+    </div>
+    <Footer/>
+    </div>
+    </>
   );
 };
 
