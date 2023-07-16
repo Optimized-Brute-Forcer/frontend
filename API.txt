@@ -1,0 +1,25 @@
+Raw API-
+https://www.linkedin.com/jobs/search/?currentJobId=3658006139&keywords=intern&location=India&refresh=true
+
+Job search API-
+https://www.linkedin.com/jobs/search/
+
+Current job API-
+https://www.linkedin.com/jobs/search/?currentJobId=3658007010
+https://www.linkedin.com/jobs/search/?currentJobId=<T>
+
+keyword search call-
+&keywords=intern
+&keywords=<T>
+
+Location search call-
+&location=India
+&location=<T>
+
+https://www.linkedin.com/jobs/search/?currentJobId=3619312885&keywords=sde&location=India
+
+Experience level search call-
+&f_E=1(Intern)
+
+Job type search call-
+&f_JT=F
